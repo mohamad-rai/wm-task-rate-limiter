@@ -16,6 +16,10 @@ class CacheService {
     this.client.connect();
   }
 
+  public async close() {
+    this.client.quit();
+  }
+
   public async getCache(userId: string): Promise<AnyObject | boolean> {
     const key = `cache:userID_${userId}`;
 

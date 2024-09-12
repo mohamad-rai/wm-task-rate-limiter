@@ -19,12 +19,15 @@
     "typeRoots": [
       "./node_modules/@types"
     ],
+    "types": ["jest"],
     "lib": [
       "ES2020"
     ]
   },
   "include": [
-    "src/**/*"
+    "src/**/*",
+    "tests/**/*",
+    "node_modules/test"
   ],
   "exclude": [
     "node_modules",
