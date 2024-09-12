@@ -1,6 +1,5 @@
 export class UserService {
-  public static getData() {
-    const userId: number = Math.floor(Math.random() * 100);
+  public static async getData(userId: string) {
     return {
       id: userId,
       name: `User ${userId}`,
