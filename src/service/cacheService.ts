@@ -1,15 +1,14 @@
 import { RedisClientType, createClient } from 'redis';
 import { logger } from '../utils/logger';
+import { DEFAULT_TTL, REDIS_URL } from '../utils/config';
 
 type AnyObject = Record<string, string|boolean|number>;
-
-const DEFAULT_TTL = 60;
 
 class CacheService {
   private client: RedisClientType;
 
   constructor(){
-    this.client = createClient();
+    this.client = createClient({ url: REDIS_URL });
     this.client.on("error", (err) => {
       logger.error(err);
     });
